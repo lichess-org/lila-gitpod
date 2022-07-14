@@ -2,7 +2,8 @@ name: registry
 
 on:
   push:
-    branches: ['main']
+    paths:
+      - 'Dockerfile'
 
 env:
   REGISTRY: ghcr.io
