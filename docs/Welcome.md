@@ -8,6 +8,8 @@ You can watch the progress in the 3 terminal tabs that are running below:
     2. `lila-ws`: Starts the websocket server
     3. `lila`: Starts the main Lichess server
 
-It will take about 10 minutes.
+It will take about 6-7 minutes.
 
-Open a new terminal and type `gp url 9663` to get the URL of your dev site. For test logins and other notes, see https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod
+Open a new terminal ("+" icon) and type `gp ports list`. When port 9663 says "open", click the link next to it to go to your dev site.
+
+For test logins and other notes, see https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod
