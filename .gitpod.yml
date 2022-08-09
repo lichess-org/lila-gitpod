@@ -9,18 +9,15 @@ additionalRepositories:
 
 tasks:
   - name: setup
-    init: |
+    command: |
+      gp open /workspace/lila-gitpod/docs/Welcome.md
+      ## Compile js + css
+      cd /workspace/lila && ./ui/build
       ## Setup initial database and seed test data (users, games, puzzles, etc)
       mkdir -p /workspace/mongodb-data
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       mongo lichess /workspace/lila/bin/mongodb/indexes.js
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
-      ## Compile js + css
-      cd /workspace/lila && ./ui/build
-      echo 'Setup complete!'
-    command: |
-      gp open /workspace/lila-gitpod/docs/Welcome.md
-      sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       redis-server --daemonize yes
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
