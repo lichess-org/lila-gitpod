@@ -1,5 +1,22 @@
 # Developing within Gitpod
 
+## Test accounts
+
+You can login with a test account:
+
+```
+lichess  /  password  ROLE_SUPER_ADMIN
+admin    /  password  ROLE_ADMIN
+bobby    /  password
+mary     /  password
+```
+
+View all test accounts (other admin types, titled accounts, flagged accounts, bots, etc):
+
+```bash
+mongosh lichess --quiet --file /workspace/lila-gitpod/scripts/mongodb/users.js
+```
+
 ## Navigating the code
 
 The main Lichess code repositories have automatically been added to your Gitpod environment. You can navigate to them by clicking the menu icon in the top left, then File > Open Folder
@@ -18,10 +35,34 @@ Bloop will detect any changed files, recompile them, then start lila.
 
 If you make code changes within your Gitpod workspace and want to send a Pull Request to Lichess:
 
-    1. Fork the original repo (like https://github.com/lichess-org/lila) to your personal Github
-    2. On the Source Control tab on the left, click the 3 dots, "Remote" > "Add Remote" > "Add remote from Github", then select your lila fork
-    3. Click the 3 dots to create a branch, then commit your changes, and publish the branch to your fork
-    4. You can then create the Pull Request on Github
+1. Fork the original repo (like https://github.com/lichess-org/lila) to your personal Github
+2. On the Source Control tab on the left, click the 3 dots, "Remote" > "Add Remote" > "Add remote from Github", then select your lila fork
+3. Click the 3 dots to create a branch, then commit your changes, and publish the branch to your fork
+4. You can then create the Pull Request on Github
+
+## Optional Services
+
+When the workplace starts, open a new terminal for each:
+
+### lila-fishnet - "Play with the computer"
+
+```bash
+cd /workspace/lila-fishnet/
+sbt run -Dhttp.port=9665
+```
+
+### fishnet clients
+
+```bash
+cd /workspace/fishnet/
+cargo build
+
+# For "Play with the computer"
+cargo run -- --endpoint http://localhost:9665/fishnet/
+
+# For "Request a computer analysis"
+cargo run -- --endpoint http://localhost:9663/fishnet/
+```
 
 ## Stopping Gitpod
 
