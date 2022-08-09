@@ -8,4 +8,4 @@ You can watch the progress in the 3 terminal tabs that are running below:
     2. `lila-ws`: Starts the websocket server
     3. `lila`: Starts the main Lichess server
 
-A preview of the dev site will open automatically to let you know it is ready.
+It will take about 10 minutes.

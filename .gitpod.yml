@@ -10,7 +10,6 @@ additionalRepositories:
 tasks:
   - name: setup
     init: |
-      open docs/Welcome.md
       ## Setup initial database and seed test data (users, games, puzzles, etc)
       mkdir -p /workspace/mongodb-data
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
@@ -20,6 +19,7 @@ tasks:
       cd /workspace/lila && ./ui/build
       echo 'Setup complete!'
     command: |
+      open docs/Welcome.md
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       redis-server --daemonize yes
       ## Create config for lila
@@ -61,7 +61,6 @@ tasks:
 ports:
   - port: 9663
     name: lila
-    onOpen: open-preview
   - port: 9664
     name: lila-ws
     onOpen: ignore
