@@ -15,4 +15,4 @@ Click here to open in Gitpod: https://gitpod.io/#https://github.com/rosen-score/
 
 ## Credits
 
-Base Dockerfile modified from https://github.com/benediktwerner/lichess-docker
+Base Dockerfile modified from [benediktwerner/lichess-docker](https://github.com/benediktwerner/lichess-docker)
