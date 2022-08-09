@@ -11,14 +11,6 @@ tasks:
   - name: setup
     command: |
       gp open /workspace/lila-gitpod/docs/Welcome.md
-      ## Compile js + css
-      cd /workspace/lila && ./ui/build
-      ## Setup initial database and seed test data (users, games, puzzles, etc)
-      mkdir -p /workspace/mongodb-data
-      sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
-      mongo lichess /workspace/lila/bin/mongodb/indexes.js
-      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
-      redis-server --daemonize yes
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
@@ -39,16 +31,21 @@ tasks:
       systembacklog=long
       userbacklog=short
       EOF
-      gp sync-done setup
+      ## Setup initial database and seed test data (users, games, puzzles, etc)
+      mkdir -p /workspace/mongodb-data
+      sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
+      mongo lichess /workspace/lila/bin/mongodb/indexes.js
+      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
+      redis-server --daemonize yes
+      ## Compile js + css
+      cd /workspace/lila && ./ui/build
   - name: lila-ws
     command: |
-      gp sync-await setup
       cd /workspace/lila-ws
       sbt compile
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: lila
     command: |
-      gp sync-await setup
       cd /workspace/lila
       sbt bloopInstall
       bloop compile lila
