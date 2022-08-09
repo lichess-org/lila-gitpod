@@ -7,11 +7,7 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 - Seed your database with test data
 - Start lila
 
-So that you can start contributing within a few minutes.
-
-Click here to open in Gitpod: https://gitpod.io/#https://github.com/rosen-score/lila-gitpod
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rosen-score/lila-gitpod)
+Click here to open in Gitpod: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rosen-score/lila-gitpod)
 
 For documentation, see [Developing within Gitpod](https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod) on the wiki.
 
