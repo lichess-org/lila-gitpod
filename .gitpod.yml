@@ -72,3 +72,7 @@ ports:
   - port: 27017
     name: mongodb
     onOpen: ignore
+
+vscode:
+  extensions:
+    - scalameta.metals
