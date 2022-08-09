@@ -37,15 +37,18 @@ tasks:
       mongo lichess /workspace/lila/bin/mongodb/indexes.js
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
       redis-server --daemonize yes
+      gp sync-done setup
       ## Compile js + css
       cd /workspace/lila && ./ui/build
   - name: lila-ws
     command: |
+      gp sync-await setup
       cd /workspace/lila-ws
       sbt compile
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: lila
     command: |
+      gp sync-await setup
       cd /workspace/lila
       sbt bloopInstall
       bloop compile lila
