@@ -9,7 +9,7 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 
 Click here to open in Gitpod: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rosen-score/lila-gitpod)
 
-For documentation, see [Developing within Gitpod](https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod) on the wiki.
+Read some [tips for developing Lichess within Gitpod](https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod).
 
 ## Credits
 
