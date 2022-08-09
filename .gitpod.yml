@@ -47,7 +47,6 @@ tasks:
       sbt compile
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: lila
-    openMode: split-right
     command: |
       gp sync-await setup
       cd /workspace/lila

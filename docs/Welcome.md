@@ -10,4 +10,4 @@ You can watch the progress in the 3 terminal tabs that are running below:
 
 It will take about 10 minutes.
 
-Open a new terminal and type `gp url 9663` to get the URL of your dev site. See `docs/Developing.md` for test logins and other notes.
+Open a new terminal and type `gp url 9663` to get the URL of your dev site. For test logins and other notes, see https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod
