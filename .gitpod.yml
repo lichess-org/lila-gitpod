@@ -1,0 +1,70 @@
+image: ghcr.io/rosen-score/lila-gitpod:main
+
+additionalRepositories:
+  - url: https://github.com/lichess-org/lila.git
+  - url: https://github.com/lichess-org/lila-ws.git
+  - url: https://github.com/lichess-org/lila-db-seed.git
+  - url: https://github.com/lichess-org/fishnet.git
+  - url: https://github.com/lichess-org/lila-fishnet.git
+
+tasks:
+  - name: setup
+    command: |
+      gp open /workspace/lila-gitpod/docs/Welcome.md
+      ## Create config for lila
+      cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
+      tee -a /workspace/lila/conf/application.conf <<EOF
+      net.domain = "$(gp url 9663 | cut -c9-)"
+      net.socket.domains = [ "$(gp url 9664 | cut -c9-)" ]
+      net.base_url = "$(gp url 9663)"
+      net.asset.base_url = "$(gp url 9663)"
+      EOF
+      ## Create config for lila-ws (websockets)
+      tee /workspace/lila-ws-gitpod-application.conf <<EOF
+      include "application"
+      csrf.origin = "$(gp url 9663)"
+      EOF
+      ## Create config for fishnet clients
+      tee /workspace/fishnet/fishnet.ini <<EOF
+      [fishnet]
+      cores=auto
+      systembacklog=long
+      userbacklog=short
+      EOF
+      ## Setup initial database and seed test data (users, games, puzzles, etc)
+      mkdir -p /workspace/mongodb-data
+      sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
+      mongo lichess /workspace/lila/bin/mongodb/indexes.js
+      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
+      redis-server --daemonize yes
+      ## Compile js + css
+      cd /workspace/lila && ./ui/build
+  - name: lila-ws
+    command: |
+      cd /workspace/lila-ws
+      sbt compile
+      sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
+  - name: lila
+    command: |
+      cd /workspace/lila
+      sbt bloopInstall
+      bloop compile lila
+      bloop run lila -m play.core.server.ProdServerStart
+
+ports:
+  - port: 9663
+    name: lila
+  - port: 9664
+    name: lila-ws
+    onOpen: ignore
+  - port: 9665
+    name: lila-fishnet
+  - port: 6379
+    name: redis
+    onOpen: ignore
+  - port: 8212
+    name: bloop
+    onOpen: ignore
+  - port: 27017
+    name: mongodb
+    onOpen: ignore
