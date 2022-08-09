@@ -10,13 +10,12 @@ additionalRepositories:
 tasks:
   - name: setup
     init: |
+      open docs/Welcome.md
       ## Setup initial database and seed test data (users, games, puzzles, etc)
       mkdir -p /workspace/mongodb-data
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       mongo lichess /workspace/lila/bin/mongodb/indexes.js
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
-      ## Compile lila-ws
-      cd /workspace/lila-ws && sbt compile
       ## Compile js + css
       cd /workspace/lila && ./ui/build
       echo 'Setup complete!'
@@ -48,6 +47,7 @@ tasks:
     command: |
       gp sync-await setup
       cd /workspace/lila-ws
+      sbt compile
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: lila
     openMode: split-right
