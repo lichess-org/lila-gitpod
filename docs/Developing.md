@@ -40,6 +40,10 @@ If you make code changes within your Gitpod workspace and want to send a Pull Re
 3. Click the 3 dots to create a branch, then commit your changes, and publish the branch to your fork
 4. You can then create the Pull Request on Github
 
+## Making your dev site public
+
+By default, you're the only one who can view your Lichess dev site. If you wish to make it available to others, click the list of ports in the bottom right, then change the port visibility to public for 9663 and 9664.
+
 ## Optional Services
 
 When the workplace starts, open a new terminal for each:

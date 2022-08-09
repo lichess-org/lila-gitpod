@@ -19,7 +19,7 @@ tasks:
       cd /workspace/lila && ./ui/build
       echo 'Setup complete!'
     command: |
-      open docs/Welcome.md
+      gp open /workspace/lila-gitpod/docs/Welcome.md
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       redis-server --daemonize yes
       ## Create config for lila
