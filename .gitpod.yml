@@ -8,6 +8,20 @@ additionalRepositories:
   - url: https://github.com/lichess-org/lila-fishnet.git
 
 tasks:
+  - name: lila
+    command: |
+      gp sync-await setup
+      cd /workspace/lila
+      sbt bloopInstall
+      gp sync-done lila-sbt
+      bloop compile lila
+      bloop run lila -m play.core.server.ProdServerStart
+  - name: lila-ws
+    command: |
+      gp sync-await lila-sbt
+      cd /workspace/lila-ws
+      sbt compile
+      sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: setup
     command: |
       gp open /workspace/lila-gitpod/docs/Welcome.md
@@ -40,20 +54,6 @@ tasks:
       gp sync-done setup
       ## Compile js + css
       cd /workspace/lila && ./ui/build
-  - name: lila
-    command: |
-      gp sync-await setup
-      cd /workspace/lila
-      sbt bloopInstall
-      gp sync-done lila-sbt
-      bloop compile lila
-      bloop run lila -m play.core.server.ProdServerStart
-  - name: lila-ws
-    command: |
-      gp sync-await lila-sbt
-      cd /workspace/lila-ws
-      sbt compile
-      sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
 
 ports:
   - port: 9663
