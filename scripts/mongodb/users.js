@@ -8,7 +8,7 @@ let users = db.user4
         return {
             id: user._id,
             roles: user.roles.join(', '),
-            title: user.title || null,
+            title: user.title || '',
             marks: user.marks.join(', '),
         }
     })
