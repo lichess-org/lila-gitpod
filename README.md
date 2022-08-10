@@ -11,6 +11,8 @@ Click here to open in Gitpod: [![Open in Gitpod](https://gitpod.io/button/open-i
 
 Read some [tips for developing Lichess within Gitpod](https://github.com/rosen-score/lila-gitpod/wiki/Developing-within-Gitpod).
 
+![lila-on-gitpod](https://user-images.githubusercontent.com/271432/183785811-dc00e385-f13f-4226-9654-93b6465c75cb.png)
+
 ## Credits
 
 Base Dockerfile modified from [benediktwerner/lichess-docker](https://github.com/benediktwerner/lichess-docker)
