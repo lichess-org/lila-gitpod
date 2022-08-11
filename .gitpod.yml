@@ -1,12 +1,5 @@
 image: ghcr.io/rosen-score/lila-gitpod:main
 
-additionalRepositories:
-  - url: https://github.com/lichess-org/lila.git
-  - url: https://github.com/lichess-org/lila-ws.git
-  - url: https://github.com/lichess-org/lila-db-seed.git
-  - url: https://github.com/lichess-org/fishnet.git
-  - url: https://github.com/lichess-org/lila-fishnet.git
-
 tasks:
   - name: lila
     command: |
@@ -25,6 +18,12 @@ tasks:
   - name: setup
     command: |
       gp open /workspace/lila-gitpod/docs/Welcome.md
+      cd /workspace
+      git clone https://github.com/lichess-org/lila.git
+      git clone https://github.com/lichess-org/lila-ws.git
+      git clone https://github.com/lichess-org/lila-db-seed.git
+      git clone https://github.com/lichess-org/fishnet.git
+      git clone https://github.com/lichess-org/lila-fishnet.git
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
