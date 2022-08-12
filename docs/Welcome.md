@@ -1,6 +1,6 @@
 # Welcome to Lichess on Gitpod
 
-Your development environment is now building.
+> Your development environment is now building.
 
 You can watch the progress in the 3 terminal tabs that are running below:
 
