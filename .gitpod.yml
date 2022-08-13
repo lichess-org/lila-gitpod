@@ -24,6 +24,7 @@ tasks:
       git clone https://github.com/lichess-org/lila-db-seed.git
       git clone https://github.com/lichess-org/fishnet.git
       git clone https://github.com/lichess-org/lila-fishnet.git
+      git clone https://github.com/lichess-org/pgn-viewer.git
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
