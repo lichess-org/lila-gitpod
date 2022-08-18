@@ -1,7 +1,7 @@
 site_name: lila-gitpod
 
 repo_url: https://github.com/rosen-score/lila-gitpod/
-edit_uri: main/docs/
+edit_uri: blob/main/docs/
 
 nav:
     - Home: index.md
