@@ -5,7 +5,7 @@
 [Metals](https://scalameta.org/metals/) is a Scala language server that provides rich IDE features. If you're working with Scala files, it can be helpful to give you:
 
 - Definitions/signatures on hover
-- Autocomplete paramater hints
+- Autocomplete parameter hints
 - Finding references
 - and more...
 
