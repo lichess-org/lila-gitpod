@@ -17,7 +17,7 @@ tasks:
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: setup
     command: |
-      gp open /workspace/lila-gitpod/docs/Welcome.md
+      gp open /workspace/lila-gitpod/gitpod/Welcome.md
       cd /workspace
       git clone https://github.com/lichess-org/lila.git
       git clone https://github.com/lichess-org/lila-ws.git
