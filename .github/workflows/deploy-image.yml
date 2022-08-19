@@ -1,6 +1,7 @@
 name: registry
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'Dockerfile'

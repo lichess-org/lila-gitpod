@@ -15,7 +15,7 @@ RUN curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux
     && sudo mv cs /usr/local/bin/cs \
     && cs setup --yes
 
-# mongodb
+# Install mongodb
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
@@ -29,10 +29,10 @@ RUN sudo apt-get autoremove -y \
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
 USER gitpod
 
-# pymongo needed for lila-db-seed
+# Install pymongo needed for lila-db-seed
 RUN python3.9 -m pip install pymongo
 
-# nvm, npm, and yarn
+# Install nvm, npm, and yarn
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
@@ -40,7 +40,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
   && nvm install 16 \
   && npm install -g yarn
 
-# java
+# Install Java
 RUN curl -s "https://get.sdkman.io" | bash \
   && source "$HOME/.sdkman/bin/sdkman-init.sh" \
   && sdk version \
@@ -55,5 +55,5 @@ RUN cs install bloop --only-prebuilt=true \
   && cs install scalafmt \
   && echo 'export PATH="$PATH:$HOME/.local/share/coursier/bin"' >> ~/.bashrc
 
-# Silence the parallel citation warning.
+# Silence the parallel citation warning
 RUN mkdir -p ~/.parallel && touch ~/.parallel/will-cite
