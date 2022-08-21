@@ -4,31 +4,31 @@ repo_url: https://github.com/rosen-score/lila-gitpod/
 edit_uri: blob/main/docs/
 
 nav:
-    - Home: index.md
-    - Getting Started: getting-started.md
-    - Development:
-        - Working with Lila: development.md
-        - Lilaisms: lilaisms.md
-        - Metals: scala-metals.md
-        - Contributing: contributing.md
-    - Using Stockfish:
-        - Play with the Computer: stockfish-play.md
-        - Computer Analysis: stockfish-analysis.md
-    - Sharing: sharing.md
-    - Other Resources: other-resources.md
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Development:
+      - Working with Lila: development.md
+      - Lilaisms: lilaisms.md
+      - Metals: scala-metals.md
+      - Contributing: contributing.md
+  - Using Stockfish:
+      - Play with the Computer: stockfish-play.md
+      - Computer Analysis: stockfish-analysis.md
+  - Sharing: sharing.md
+  - Other Resources: other-resources.md
 
 theme:
   name: material
   logo: https://lichess1.org/assets/logo/lichess-white.svg
   font: false
   palette:
-    - media: "(prefers-color-scheme: light)"
+    - media: '(prefers-color-scheme: light)'
       scheme: default
       primary: blue
       toggle:
-        icon: material/toggle-switch 
+        icon: material/toggle-switch
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
+    - media: '(prefers-color-scheme: dark)'
       scheme: slate
       primary: blue
       toggle:
