@@ -10,6 +10,7 @@ nav:
       - Working with Lila: development.md
       - Lilaisms: lilaisms.md
       - Metals: scala-metals.md
+      - Email Development: email-development.md
       - Contributing: contributing.md
   - Using Stockfish:
       - Play with the Computer: stockfish-play.md

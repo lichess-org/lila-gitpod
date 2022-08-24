@@ -20,7 +20,7 @@ RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key 
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
 RUN sudo apt-get update && sudo apt update \
-  && sudo apt-get install -y git-all mongodb-org parallel psmisc python3-pip python3.9 redis-server unzip vim zip
+  && sudo apt-get install -y git-all golang-go mongodb-org parallel psmisc python3.9 python3-pip redis-server unzip vim zip
 
 # Cleanup
 RUN sudo apt-get autoremove -y \

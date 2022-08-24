@@ -72,6 +72,13 @@ ports:
   - port: 27017
     name: mongodb
     onOpen: ignore
+  - port: 8000
+    name: docs
+  - port: 587
+    name: smtp
+    onOpen: ignore
+  - port: 8025
+    name: mailhog
 
 vscode:
   extensions:
