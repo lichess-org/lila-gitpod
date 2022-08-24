@@ -2,7 +2,7 @@
 
 !!! info "What is lila?"
 
-    Lichess is primarily written in the Scala programming language. The name for the main Lichess codebase is called "lila", which stands for "**_Li_**chess in Sca**_la_**".
+    Lichess is primarily written in the Scala programming language. The name for the main Lichess codebase is "lila", which stands for "**_Li_**chess in Sca**_la_**".
 
 
 ## Navigating the code
