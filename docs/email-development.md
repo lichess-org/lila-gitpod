@@ -7,7 +7,6 @@ By default, any emails from your development site will not really be sent, and o
 If you're working on emails, you may find it helpful to use [MailHog](https://github.com/mailhog/MailHog) to debug them and get a more inbox-type view where you can see the rendered HTML emails.
 
 1. Append these 2 lines to `/workspace/lila/conf/application.conf`:
-
    ```
    mailer.primary.mock = false
    mailer.primary.tls = false
@@ -16,7 +15,6 @@ If you're working on emails, you may find it helpful to use [MailHog](https://gi
 2. Restart lila to apply the config changes (see [Recompiling lila](/development/#recompiling-lila))
 
 3. Then start MailHog:
-
    ```
    go get github.com/mailhog/MailHog
    sudo ~/go/bin/MailHog -smtp-bind-addr 0.0.0.0:587
