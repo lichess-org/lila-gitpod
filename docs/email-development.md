@@ -8,18 +8,18 @@ If you're working on emails, you may find it helpful to use [MailHog](https://gi
 
 1. Append these 2 lines to `/workspace/lila/conf/application.conf`:
 
-    ```
-    mailer.primary.mock = false
-    mailer.primary.tls = false
-    ```
+   ```
+   mailer.primary.mock = false
+   mailer.primary.tls = false
+   ```
 
-2. Restart lila to apply the config changes (see [recompiling lila](/development/#recompiling-lila))
+2. Restart lila to apply the config changes (see [Recompiling lila](/development/#recompiling-lila))
 
 3. Then start MailHog:
 
-    ```bash
-    go get github.com/mailhog/MailHog
-    sudo ~/go/bin/MailHog -smtp-bind-addr 0.0.0.0:587
-    ```
+   ```
+   go get github.com/mailhog/MailHog
+   sudo ~/go/bin/MailHog -smtp-bind-addr 0.0.0.0:587
+   ```
 
-When you trigger an email to be sent, it will show in the MailHog UI which is available at the URL when you you type `gp url 8025` in a terminal.
+When you trigger an email to be sent, it will now show in the MailHog UI which is available at the URL when you type `gp url 8025` in a terminal.
