@@ -7,9 +7,9 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 - Seed your database with test data
 - Start lila
 
-Read the full [Lichess on Gitpod documentation](https://rosen-score.github.io/lila-gitpod/).
+Read the full [Lichess on Gitpod documentation](https://lichess-org.github.io/lila-gitpod/).
 
-Click here to create a workspace: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rosen-score/lila-gitpod)
+Click here to create a workspace: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/lichess-org/lila-gitpod)
 
 ![lila-on-gitpod](https://user-images.githubusercontent.com/271432/183785811-dc00e385-f13f-4226-9654-93b6465c75cb.png)
 
