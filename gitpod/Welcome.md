@@ -12,4 +12,4 @@ It will take about 8-10 minutes.
 
 Open a new terminal ("+" icon) and type `gp ports list`. When port 9663 says "open", click the link next to it to go to your dev site.
 
-For test logins and other notes, see https://rosen-score.github.io/lila-gitpod/
+For test logins and other notes, see https://lichess-org.github.io/lila-gitpod/

@@ -1,6 +1,6 @@
 site_name: lila-gitpod
 
-repo_url: https://github.com/rosen-score/lila-gitpod/
+repo_url: https://github.com/lichess-org/lila-gitpod/
 edit_uri: blob/main/docs/
 
 nav:
