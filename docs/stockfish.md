@@ -18,12 +18,13 @@ The [Stockfish](https://stockfishchess.org/) engine is used for a couple of thin
    cargo run -- --endpoint http://localhost:9663/fishnet/ --max-backoff 1s
    ```
 
-3. For **"Play with the Computer"**, connect Fishnet to port 9665:
-   ```
-   cargo run -- --endpoint http://localhost:9665/fishnet/ --max-backoff 1s
-   ```
-   Then, start the `lila-fishnet` service. In a separate terminal:
+3. For **"Play with the Computer"**, start the `lila-fishnet` service:
    ```
    cd /workspace/lila-fishnet/
    sbt run -Dhttp.port=9665
+   ```
+   Then, connect Fishnet to port 9665. In a separate terminal:
+   ```
+   cd /workspace/fishnet/
+   cargo run -- --endpoint http://localhost:9665/fishnet/ --max-backoff 1s
    ```
