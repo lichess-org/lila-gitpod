@@ -27,7 +27,7 @@ RUN sudo apt-get autoremove -y \
   && sudo apt-get clean
 
 # Add nginx site config
-COPY build/nginx/lichess.conf /etc/nginx/sites-enabled
+COPY build/nginx/lichess.conf /etc/nginx/sites-enabled/
 
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
 USER gitpod
