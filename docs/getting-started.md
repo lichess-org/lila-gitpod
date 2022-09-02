@@ -10,7 +10,7 @@ It will take about 8-10 minutes. You can watch the progress in the 3 terminal wi
 
 To get the URL for your development site, in a new terminal, type:
 
-    gp url 9663
+    gp url 8080
 
 Once lila is running, your dev site will be available. You can check the status of the ports with:
 
