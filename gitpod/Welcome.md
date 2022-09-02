@@ -10,6 +10,6 @@ You can watch the progress in the 3 terminal tabs that are running below:
 
 It will take about 8-10 minutes.
 
-Open a new terminal ("+" icon) and type `gp ports list`. When port 9663 says "open", click the link next to it to go to your dev site.
+Open a new terminal ("+" icon) and type `gp ports list`. When port 9663 says "open", click the link next to port 8080 to open your development site.
 
-For test logins and other notes, see https://lichess-org.github.io/lila-gitpod/
+For test logins and more documentation, see https://lichess-org.github.io/lila-gitpod/

@@ -2,9 +2,9 @@
 
 ## Making your development site public
 
-By default, your Lichess dev site is only accessible by you. If you want to make it available to others or if you're developing an API client application, you can make ports `9663` and `9664` public.
+By default, your Lichess dev site is only accessible by you. If you want to make it available to others or if you're developing an API client application, you can make port `8080` public.
 
-Click the Remote Explorer icon on the left menu column, then change the port visibility to public for `9663` and `9664`.
+Click the Remote Explorer icon on the left menu column, then change the port visibility to public for `8080`. You can keep the others private.
 
 !!! attention
 

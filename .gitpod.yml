@@ -28,15 +28,15 @@ tasks:
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
-      net.domain = "$(gp url 9663 | cut -c9-)"
-      net.socket.domains = [ "$(gp url 9664 | cut -c9-)" ]
-      net.base_url = "$(gp url 9663)"
-      net.asset.base_url = "$(gp url 9663)"
+      net.domain = "$(gp url 8080 | cut -c9-)"
+      net.socket.domains = [ "$(gp url 8080 | cut -c9-)" ]
+      net.base_url = "$(gp url 8080)"
+      net.asset.base_url = "$(gp url 8080)"
       EOF
       ## Create config for lila-ws (websockets)
       tee /workspace/lila-ws-gitpod-application.conf <<EOF
       include "application"
-      csrf.origin = "$(gp url 9663)"
+      csrf.origin = "$(gp url 8080)"
       EOF
       ## Create config for fishnet clients
       tee /workspace/fishnet/fishnet.ini <<EOF
@@ -56,8 +56,11 @@ tasks:
       cd /workspace/lila && ./ui/build
 
 ports:
+  - port: 8080
+    name: lichess
   - port: 9663
     name: lila
+    onOpen: ignore
   - port: 9664
     name: lila-ws
     onOpen: ignore
