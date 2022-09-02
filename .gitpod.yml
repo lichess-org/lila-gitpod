@@ -52,6 +52,7 @@ tasks:
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
       redis-server --daemonize yes
       gp sync-done setup
+      sudo service nginx restart
       ## Compile js + css
       cd /workspace/lila && ./ui/build
 
