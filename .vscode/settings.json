@@ -1,4 +1,5 @@
 {
+  "gitpod.experimental.portsView.enabled": true,
   "workbench.colorTheme": "Visual Studio Dark",
   "workbench.editorAssociations": {
     "Welcome.md": "vscode.markdown.preview.editor"

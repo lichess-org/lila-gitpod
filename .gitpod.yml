@@ -59,6 +59,7 @@ tasks:
 ports:
   - port: 8080
     name: lichess
+    description: Your Lichess development site
   - port: 9663
     name: lila
     onOpen: ignore

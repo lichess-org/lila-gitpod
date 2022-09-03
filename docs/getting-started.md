@@ -12,9 +12,7 @@ To get the URL for your development site, in a new terminal, type:
 
     gp url 8080
 
-Once lila is running, your dev site will be available. You can check the status of the ports with:
-
-    gp ports list
+Once lila is running, your dev site will be available. You can check the status on the PORTS tab above your terminal.
 
 ## Test accounts
 
