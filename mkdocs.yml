@@ -9,7 +9,7 @@ nav:
   - Development:
       - Working with Lila: development.md
       - Lilaisms: lilaisms.md
-      - Metals: scala-metals.md
+      - Extensions: extensions.md
       - Email Development: email-development.md
       - Contributing: contributing.md
   - API Testing: api-testing.md
