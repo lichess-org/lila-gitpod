@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'Dockerfile'
+      - 'build/nginx/lichess.conf'
 
 env:
   REGISTRY: ghcr.io
