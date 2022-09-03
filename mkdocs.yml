@@ -12,6 +12,7 @@ nav:
       - Metals: scala-metals.md
       - Email Development: email-development.md
       - Contributing: contributing.md
+  - API Testing: api-testing.md
   - Using Stockfish: stockfish.md
   - Sharing: sharing.md
   - Other Resources: other-resources.md
