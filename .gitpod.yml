@@ -17,7 +17,6 @@ tasks:
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: setup
     command: |
-      open --reuse-window /workspace/lila
       gp open /workspace/lila-gitpod/gitpod/Welcome.md
       sudo service nginx restart
       cd /workspace
@@ -27,6 +26,7 @@ tasks:
       git clone https://github.com/lichess-org/fishnet.git --recursive
       git clone https://github.com/lichess-org/lila-fishnet.git
       git clone https://github.com/lichess-org/pgn-viewer.git
+      open --reuse-window /workspace/lila
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
