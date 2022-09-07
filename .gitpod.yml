@@ -17,6 +17,7 @@ tasks:
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: setup
     command: |
+      open --reuse-window /workspace/lila
       gp open /workspace/lila-gitpod/gitpod/Welcome.md
       sudo service nginx restart
       cd /workspace
