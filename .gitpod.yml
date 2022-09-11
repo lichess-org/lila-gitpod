@@ -26,7 +26,6 @@ tasks:
       git clone https://github.com/lichess-org/fishnet.git --recursive
       git clone https://github.com/lichess-org/lila-fishnet.git
       git clone https://github.com/lichess-org/pgn-viewer.git
-      open --reuse-window /workspace/lila
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
@@ -56,6 +55,8 @@ tasks:
       gp sync-done setup
       ## Compile js + css
       cd /workspace/lila && ./ui/build
+      ## Switch editor to lila workspace
+      open --reuse-window /workspace/lila
 
 ports:
   - port: 8080
