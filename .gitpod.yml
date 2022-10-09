@@ -29,6 +29,7 @@ tasks:
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
+      net.site.name = "lila-gitpod"
       net.domain = "$(gp url 8080 | cut -c9-)"
       net.socket.domains = [ "$(gp url 8080 | cut -c9-)" ]
       net.base_url = "$(gp url 8080)"
