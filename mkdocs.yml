@@ -9,6 +9,7 @@ nav:
   - Development:
       - Working with Lila: development.md
       - Lilaisms: lilaisms.md
+      - External Engine: external-engine.md
       - Extensions: extensions.md
       - Email Development: email-development.md
       - Contributing: contributing.md
