@@ -23,6 +23,7 @@ tasks:
       git clone https://github.com/lichess-org/lila.git
       git clone https://github.com/lichess-org/lila-ws.git
       git clone https://github.com/lichess-org/lila-db-seed.git
+      git clone https://github.com/lichess-org/lila-engine.git
       git clone https://github.com/lichess-org/fishnet.git --recursive
       git clone https://github.com/lichess-org/lila-fishnet.git
       git clone https://github.com/lichess-org/pgn-viewer.git
@@ -34,6 +35,7 @@ tasks:
       net.socket.domains = [ "$(gp url 8080 | cut -c9-)" ]
       net.base_url = "$(gp url 8080)"
       net.asset.base_url = "$(gp url 8080)"
+      externalEngine.endpoint = "$(gp url 9666)"
       EOF
       ## Create config for lila-ws (websockets)
       tee /workspace/lila-ws-gitpod-application.conf <<EOF
