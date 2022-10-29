@@ -73,6 +73,9 @@ ports:
     onOpen: ignore
   - port: 9665
     name: lila-fishnet
+  - port: 9666
+    name: lila-engine
+    visibility: public
   - port: 6379
     name: redis
     onOpen: ignore
