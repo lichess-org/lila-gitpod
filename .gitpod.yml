@@ -1,6 +1,12 @@
 image: ghcr.io/lichess-org/lila-gitpod:main
 
 tasks:
+  - name: bleep
+    command: |
+      gp sync-await setup
+      ## Compile js + css
+      cd /workspace/lila
+      ./ui/bleep
   - name: lila
     command: |
       gp sync-await setup
@@ -54,8 +60,6 @@ tasks:
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
       redis-server --daemonize yes
       gp sync-done setup
-      ## Compile js + css
-      cd /workspace/lila && ./ui/build
       ## Switch editor to lila workspace
       open --reuse-window /workspace/lila
 
