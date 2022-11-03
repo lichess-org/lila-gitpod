@@ -62,6 +62,7 @@ tasks:
       gp sync-done setup
       ## Switch editor to lila workspace
       open --reuse-window /workspace/lila
+      gp open /workspace/lila-gitpod/gitpod/Welcome.md
 
 ports:
   - port: 8080
