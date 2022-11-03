@@ -25,40 +25,7 @@ Bloop will detect any changed files, recompile them, then start lila.
 
 ## Recompiling frontend assets
 
-If you're working on UI elements, you may need to recompile the CSS or Javascript.
-
-#### Recompile everything
-
-    cd /workspace/lila
-    ./ui/build
-
-That takes a few minutes to run. Instead, maybe you want to compile something more specific:
-
-#### CSS
-
-    cd /workspace/lila/ui
-    npm run gulp css-dev
-
-???+ tip
-
-    To automatically re-compile as you edit any sass files:
-
-        npm run gulp css
-
-#### Javascript
-
-If you're working on a specific UI component, you can `cd` into it and compile just that component.
-
-For example, if we're working on the `keyboardMove` component:
-
-    cd /workspace/lila/ui/keyboardMove
-    yarn run dev
-
-???+ tip
-
-    To automatically re-compile as you edit any Typescript files:
-
-        yarn run dev --watch
+If you're working on TypeScript or SCSS files, another process called `bleep` will automatically detect the changes and recompile the assets. You can see the output in the `bleep` terminal.
 
 ## Updating Routes
 
