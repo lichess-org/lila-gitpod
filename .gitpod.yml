@@ -14,7 +14,7 @@ tasks:
       sbt bloopInstall
       gp sync-done lila-sbt
       bloop compile lila
-      bloop run lila -m play.core.server.ProdServerStart
+      bloop run lila -m lila.app.ServerStart
   - name: lila-ws
     command: |
       gp sync-await lila-sbt
