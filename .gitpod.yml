@@ -6,7 +6,7 @@ tasks:
       gp sync-await setup
       ## Compile js + css
       cd /workspace/lila
-      ./ui/bleep
+      ./ui/bleep -w
   - name: lila
     command: |
       gp sync-await setup
