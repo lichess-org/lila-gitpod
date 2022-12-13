@@ -19,7 +19,7 @@ To open them in your workspace:
 
 When you edit a scala file, you'll have to restart `bloop`. Go to the `lila` terminal, type `Ctrl+c` to stop the running process, then rerun:
 
-    bloop run lila -m lila.app.ServerStart
+    bloop run lila -m lila.app.Lila
 
 Bloop will detect any changed files, recompile them, then start lila.
 
