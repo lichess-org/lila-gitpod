@@ -25,7 +25,7 @@ Bloop will detect any changed files, recompile them, then start lila.
 
 ## Recompiling frontend assets
 
-If you're working on TypeScript or SCSS files, another process called `bleep` will automatically detect the changes and recompile the assets. You can see the output in the `bleep` terminal.
+If you're working on TypeScript or SCSS files, `./ui/build -w` will automatically detect the changes and recompile the assets. You can see the output in the `ui` terminal.
 
 ## Updating Routes
 
