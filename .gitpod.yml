@@ -1,12 +1,12 @@
 image: ghcr.io/lichess-org/lila-gitpod:main
 
 tasks:
-  - name: bleep
+  - name: ui
     command: |
       gp sync-await setup
       ## Compile js + css
       cd /workspace/lila
-      ./ui/bleep -w
+      ./ui/build -w
   - name: lila
     command: |
       gp sync-await setup

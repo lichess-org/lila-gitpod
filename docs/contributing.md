@@ -5,7 +5,7 @@
 Before submitting any pull requests, run the linters:
 
     sbt scalafmtAll
-    yarn run format
+    pnpm run format
 
 ## Submitting a Pull Request
 
