@@ -37,13 +37,13 @@ USER gitpod
 # Install pymongo needed for lila-db-seed
 RUN python3.9 -m pip install pymongo
 
-# Install nvm, npm, and yarn
+# Install nvm, npm, and pnpm
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
   && echo ". \"$HOME/.nvm/nvm.sh\"" >> ~/.bashrc \
-  && nvm install 16 \
-  && npm install -g yarn
+  && nvm install 19 \
+  && npm install -g pnpm
 
 # Install Java
 RUN curl -s "https://get.sdkman.io" | bash \
