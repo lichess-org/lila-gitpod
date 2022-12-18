@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20220415
+FROM ubuntu:focal-20221130
 
 SHELL ["/bin/bash", "-c"]
 
@@ -11,7 +11,7 @@ RUN sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && sudo echo $TZ > /etc/
 RUN locale-gen "en_US.UTF-8"
 
 # Install coursier (dependency of bloop)
-RUN curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs \
+RUN curl -fL https://github.com/coursier/launchers/raw/a827601d2f3d05a92df8f1d46cdd256afb1716b0/cs-x86_64-pc-linux.gz | gzip -d > cs \
     && chmod +x cs \
     && sudo mv cs /usr/local/bin/cs \
     && cs setup --yes
@@ -38,7 +38,7 @@ USER gitpod
 RUN python3.9 -m pip install pymongo
 
 # Install nvm, npm, and pnpm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
   && echo ". \"$HOME/.nvm/nvm.sh\"" >> ~/.bashrc \
@@ -49,7 +49,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
 RUN curl -s "https://get.sdkman.io" | bash \
   && source "$HOME/.sdkman/bin/sdkman-init.sh" \
   && sdk version \
-  && sdk install java 17.0.3-tem \
+  && sdk install java 17.0.5-tem \
   && sdk install sbt
 
 # Install Rust and Cargo, needed for fishnet
