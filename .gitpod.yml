@@ -42,6 +42,7 @@ tasks:
       net.base_url = "$(gp url 8080)"
       net.asset.base_url = "$(gp url 8080)"
       externalEngine.endpoint = "$(gp url 9666)"
+      swiss.bbpairing = "/opt/bbpPairings/bbpPairings.exe"
       EOF
       ## Create config for lila-ws (websockets)
       tee /workspace/lila-ws-gitpod-application.conf <<EOF

@@ -3,8 +3,8 @@ FROM ubuntu:focal-20221130
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update \
-    && apt update \
-    && apt-get install -y build-essential ca-certificates curl gnupg locales sudo wget
+  && apt update \
+  && apt-get install -y build-essential ca-certificates curl gnupg locales sudo wget
 
 ENV TZ=Etc/GMT
 RUN sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && sudo echo $TZ > /etc/timezone
@@ -12,9 +12,9 @@ RUN locale-gen "en_US.UTF-8"
 
 # Install coursier (dependency of bloop)
 RUN curl -fL https://github.com/coursier/launchers/raw/a827601d2f3d05a92df8f1d46cdd256afb1716b0/cs-x86_64-pc-linux.gz | gzip -d > cs \
-    && chmod +x cs \
-    && sudo mv cs /usr/local/bin/cs \
-    && cs setup --yes
+  && chmod +x cs \
+  && sudo mv cs /usr/local/bin/cs \
+  && cs setup --yes
 
 # Add mongodb apt source
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
@@ -30,6 +30,13 @@ RUN sudo apt-get autoremove -y \
 # Add nginx site config
 COPY build/nginx/lichess.conf /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
+
+# Build bbbpairings
+RUN mkdir -p /opt \
+  && git clone https://github.com/cyanfish/bbpPairings /opt/bbpPairings \
+  && cd /opt/bbpPairings \
+  && make \
+  && chmod +x bbpPairings.exe
 
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
 USER gitpod
