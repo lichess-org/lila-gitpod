@@ -33,6 +33,7 @@ tasks:
       git clone https://github.com/lichess-org/fishnet.git --recursive
       git clone https://github.com/lichess-org/lila-fishnet.git
       git clone https://github.com/lichess-org/pgn-viewer.git
+      git clone https://github.com/lichess-org/lila-gif.git
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
@@ -43,6 +44,7 @@ tasks:
       net.asset.base_url = "$(gp url 8080)"
       externalEngine.endpoint = "$(gp url 9666)"
       swiss.bbpairing = "/opt/bbpPairings/bbpPairings.exe"
+      game.gifUrl = "http://localhost:6175"
       EOF
       ## Create config for lila-ws (websockets)
       tee /workspace/lila-ws-gitpod-application.conf <<EOF
@@ -81,6 +83,8 @@ ports:
   - port: 9666
     name: lila-engine
     visibility: public
+  - port: 6175
+    name: lila-gif
   - port: 6379
     name: redis
     onOpen: ignore
