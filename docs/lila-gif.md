@@ -1,4 +1,6 @@
-[lila-gif](https://github.com/lichess-org/lila-gif) is an optional service you can run that will generate the animated GIFs of a game.
+# lila-gif
+
+[lila-gif](https://github.com/lichess-org/lila-gif) is an optional service you can run that will generate animated GIFs and screenshots of a game/position.
 
 Enables the functionality:
 
