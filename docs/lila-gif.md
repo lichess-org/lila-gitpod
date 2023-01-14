@@ -14,7 +14,7 @@ cd /workspace/lila-gif
 cargo run
 ```
 
-The lila-gif service will start on port 6175. You can test it by running the following command in your workspace:
+The `lila-gif` service will start on port 6175. You can test it by running the following command in your workspace:
 
 ```
 curl http://localhost:6175/image.gif?fen=4k3/6KP/8/8/8/8/7p/8 --output image.gif
