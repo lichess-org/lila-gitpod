@@ -7,6 +7,9 @@ Enables the functionality:
 - Game Analysis > Share & export > Game as GIF
 - Game Analysis > Share & export > Screenshot current position
 
+
+In a new terminal, run:
+
 ```
 cd /workspace/lila-gif
 cargo run
