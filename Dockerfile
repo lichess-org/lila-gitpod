@@ -50,7 +50,7 @@ USER gitpod
 RUN python3.9 -m pip install pymongo
 
 # Install nvm, npm, and pnpm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
   && echo ". \"$HOME/.nvm/nvm.sh\"" >> ~/.bashrc \
