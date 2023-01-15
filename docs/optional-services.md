@@ -131,7 +131,6 @@ pnpm link /workspace/chessground
 ## lila-search
 
 1. Install + configure [lila-search](https://github.com/lichess-org/lila-search):
-
    ```
    echo "search.enabled = true" >> /workspace/lila/conf/application.conf
    git clone https://github.com/lichess-org/lila-search /workspace/lila-search
@@ -141,13 +140,10 @@ pnpm link /workspace/chessground
    ```
 
 2. Start the `elasticsearch` service:
-
    ```
    sudo /etc/init.d/elasticsearch start
    ```
-
    Verify it's working by running:
-
    ```
    curl -X GET 'http://localhost:9200'
    ```
@@ -157,7 +153,6 @@ pnpm link /workspace/chessground
 4. Log in to your development site as the `lichess` user (with admin privileges). And visit the `echo $(gp url 8080)/dev/cli` URL.
 
 5. Run the following commands through the web interface:
-
    ```
    forum search reset
    team search reset
