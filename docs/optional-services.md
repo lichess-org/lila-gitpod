@@ -2,7 +2,7 @@
 
 By default, your lila-gitpod workspace will start with the basic services required to run lila.
 
-Depending on what you're working on, you may want to enable additional services.
+Depending on what you're working on, you may want to enable some of these additional services.
 
 ## Stockfish
 
