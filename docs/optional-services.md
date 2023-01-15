@@ -102,6 +102,25 @@ You can verify it's working going to the URL that's returned when you type `echo
 
 ## scalachess
 
+[Scalachess](https://github.com/lichess-org/scalachess) will automatically be installed from the maven source. But if you wish to make changes and develop locally:
+
+```
+git clone https://github.com/lichess-org/scalachess.git /workspace/scalachess
+cd /workspace/scalachess
+sbt publishLocal
+```
+
 ## pgn-viewer + chessground
+
+[PGN Viewer](https://github.com/lichess-org/pgn-viewer) and [Chessground](https://github.com/lichess-org/chessground) will automatically be installed from NPM. You can install them locally if you wish to make changes and develop locally:
+
+```
+git clone https://github.com/lichess-org/pgn-viewer.git /workspace/pgn-viewer
+git clone https://github.com/lichess-org/chessground.git /workspace/chessground
+
+cd /workspace/lila/ui/site
+pnpm link /workspace/pgn-viewer
+pnpm link /workspace/chessground
+```
 
 ## lila-search
