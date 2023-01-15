@@ -39,8 +39,11 @@ To enable:
 
 The broker for external engine has its own service and port (9666). It must be started separately if you wish to use it.
 
-    cd /workspace/lila-engine
-    LILA_ENGINE_LOG=lila_engine=debug,tower_http=debug cargo run -- --bind 127.0.0.1:9666
+```
+git clone https://github.com/lichess-org/lila-engine.git /workspace/lila-engine
+cd /workspace/lila-engine
+LILA_ENGINE_LOG=lila_engine=debug,tower_http=debug cargo run -- --bind 127.0.0.1:9666
+```
 
 You can then connect an external engine client to port 9666.
 
@@ -92,11 +95,13 @@ open image.gif
 
 [Picfit](https://github.com/thoas/picfit) is used to resize blog and streamer page images.
 
-    git clone https://github.com/thoas/picfit.git /workspace/picfit
-    cd /workspace/picfit
-    make build
-    echo '{"port": 3001}' > config.json
-    ./picfit -c config.json
+```
+git clone https://github.com/thoas/picfit.git /workspace/picfit
+cd /workspace/picfit
+make build
+echo '{"port": 3001}' > config.json
+./picfit -c config.json
+```
 
 You can verify it's working going to the URL that's returned when you type `echo $(gp url 3001)/healthcheck` in a terminal.
 
