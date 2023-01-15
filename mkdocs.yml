@@ -9,13 +9,10 @@ nav:
   - Development:
       - Working with Lila: development.md
       - Lilaisms: lilaisms.md
-      - External Engine: external-engine.md
       - Extensions: extensions.md
-      - Email Development: email-development.md
-      - lila-gif: lila-gif.md
+      - Optional Services: optional-services.md
       - Contributing: contributing.md
   - API Testing: api-testing.md
-  - Using Stockfish: stockfish.md
   - Sharing: sharing.md
   - Other Resources: other-resources.md
 
