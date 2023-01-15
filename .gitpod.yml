@@ -29,10 +29,8 @@ tasks:
       git clone https://github.com/lichess-org/lila.git
       git clone https://github.com/lichess-org/lila-ws.git
       git clone https://github.com/lichess-org/lila-db-seed.git
-      git clone https://github.com/lichess-org/lila-engine.git
       git clone https://github.com/lichess-org/fishnet.git --recursive
       git clone https://github.com/lichess-org/lila-fishnet.git
-      git clone https://github.com/lichess-org/pgn-viewer.git
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
@@ -43,6 +41,7 @@ tasks:
       net.asset.base_url = "$(gp url 8080)"
       externalEngine.endpoint = "$(gp url 9666)"
       swiss.bbpairing = "/opt/bbpPairings/bbpPairings.exe"
+      game.gifUrl = "http://localhost:6175"
       EOF
       ## Create config for lila-ws (websockets)
       tee /workspace/lila-ws-gitpod-application.conf <<EOF
@@ -60,7 +59,7 @@ tasks:
       mkdir -p /workspace/mongodb-data
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       mongo lichess /workspace/lila/bin/mongodb/indexes.js
-      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --drop all
+      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py
       redis-server --daemonize yes
       gp sync-done setup
       ## Switch editor to lila workspace
@@ -81,15 +80,25 @@ ports:
   - port: 9666
     name: lila-engine
     visibility: public
+  - port: 9673
+    name: lila-search
+  - port: 6175
+    name: lila-gif
   - port: 6379
     name: redis
     onOpen: ignore
   - port: 8212
     name: bloop
     onOpen: ignore
+  - port: 9200
+    name: elasticsearch
+  - port: 9300
+    name: elasticsearch-cluster
   - port: 27017
     name: mongodb
     onOpen: ignore
+  - port: 3001
+    name: picfit
   - port: 8000
     name: docs
   - port: 587

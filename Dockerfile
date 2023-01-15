@@ -20,8 +20,17 @@ RUN curl -fL https://github.com/coursier/launchers/raw/a827601d2f3d05a92df8f1d46
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
+# Add elasticsearch apt source (for lila-search)
+RUN curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
 RUN sudo apt-get update && sudo apt update \
-  && sudo apt-get install -y git-all golang-go mongodb-org nginx parallel psmisc python3.9 python3-pip redis-server unzip vim zip
+  && sudo apt-get install -y elasticsearch git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
+
+# Install Golang (For Picfit + Mailhog)
+RUN wget https://go.dev/dl/go1.19.5.linux-amd64.tar.gz \
+  && sudo tar -C /usr/local -xzf go1.19.5.linux-amd64.tar.gz \
+  && rm go1.19.5.linux-amd64.tar.gz
 
 # Cleanup
 RUN sudo apt-get autoremove -y \
@@ -45,7 +54,7 @@ USER gitpod
 RUN python3.9 -m pip install pymongo
 
 # Install nvm, npm, and pnpm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash \
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
   && echo ". \"$HOME/.nvm/nvm.sh\"" >> ~/.bashrc \
@@ -67,5 +76,5 @@ RUN cs install bloop --only-prebuilt=true \
   && cs install scalafmt \
   && echo 'export PATH="$PATH:$HOME/.local/share/coursier/bin"' >> ~/.bashrc
 
-# Silence the parallel citation warning
-RUN mkdir -p ~/.parallel && touch ~/.parallel/will-cite
+# Add golang binary to path
+RUN echo 'export PATH="$PATH:/usr/local/go/bin"' >> ~/.bashrc
