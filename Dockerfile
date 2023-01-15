@@ -20,8 +20,12 @@ RUN curl -fL https://github.com/coursier/launchers/raw/a827601d2f3d05a92df8f1d46
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
+# Add elasticsearch apt source (for lila-search)
+RUN curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
 RUN sudo apt-get update && sudo apt update \
-  && sudo apt-get install -y git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
+  && sudo apt-get install -y elasticsearch git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
 
 # Install Golang (For Picfit + Mailhog)
 RUN wget https://go.dev/dl/go1.19.5.linux-amd64.tar.gz \

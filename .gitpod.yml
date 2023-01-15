@@ -80,6 +80,8 @@ ports:
   - port: 9666
     name: lila-engine
     visibility: public
+  - port: 9673
+    name: lila-search
   - port: 6175
     name: lila-gif
   - port: 6379
@@ -88,6 +90,10 @@ ports:
   - port: 8212
     name: bloop
     onOpen: ignore
+  - port: 9200
+    name: elasticsearch
+  - port: 9300
+    name: elasticsearch-cluster
   - port: 27017
     name: mongodb
     onOpen: ignore
