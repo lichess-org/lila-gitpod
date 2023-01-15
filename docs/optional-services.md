@@ -11,6 +11,8 @@ The [Stockfish](https://stockfishchess.org/) engine is used for a couple of thin
 - "Request a Computer Analysis" for post-game analysis
 - "Play with the Computer"
 
+To enable:
+
 1. Compile the [fishnet](https://github.com/lichess-org/fishnet) client:
    ```
    cd /workspace/fishnet/
@@ -68,7 +70,7 @@ When you trigger an email to be sent, it will now show in the MailHog UI which i
 
 ## lila-gif
 
-The [lila-gif](https://github.com/lichess-org/lila-gif) service will enable the functionalities:
+The [lila-gif](https://github.com/lichess-org/lila-gif) service will enable the functionality:
 
 - Game Analysis > Share & export > Game as GIF
 - Game Analysis > Share & export > Screenshot current position
