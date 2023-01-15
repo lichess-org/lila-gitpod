@@ -8,10 +8,8 @@ Depending on what you're working on, you may want to enable some of these additi
 
 The [Stockfish](https://stockfishchess.org/) engine is used for a couple of things within lila:
 
-1. "Request a Computer Analysis" for post-game analysis
-2. "Play with the Computer"
-
-### Instructions
+- "Request a Computer Analysis" for post-game analysis
+- "Play with the Computer"
 
 1. Compile the [fishnet](https://github.com/lichess-org/fishnet) client:
    ```
@@ -75,14 +73,18 @@ The [lila-gif](https://github.com/lichess-org/lila-gif) service will enable the 
 - Game Analysis > Share & export > Game as GIF
 - Game Analysis > Share & export > Screenshot current position
 
-    git clone https://github.com/lichess-org/lila-gif.git /workspace/lila-gif
-    cd /workspace/lila-gif
-    cargo run
+```
+git clone https://github.com/lichess-org/lila-gif.git /workspace/lila-gif
+cd /workspace/lila-gif
+cargo run
+```
 
 You can verify it's working by running the following commands in another terminal:
 
-    curl http://localhost:6175/image.gif?fen=4k3/6KP/8/8/8/8/7p/8 --output image.gif
-    open image.gif
+```
+curl http://localhost:6175/image.gif?fen=4k3/6KP/8/8/8/8/7p/8 --output image.gif
+open image.gif
+```
 
 ## picfit
 
