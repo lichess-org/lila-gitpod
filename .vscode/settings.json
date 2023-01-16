@@ -1,5 +1,4 @@
 {
-  "gitpod.experimental.portsView.enabled": true,
   "workbench.editorAssociations": {
     "Welcome.md": "vscode.markdown.preview.editor"
   }
