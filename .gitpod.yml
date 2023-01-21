@@ -62,6 +62,8 @@ tasks:
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py
       redis-server --daemonize yes
       gp sync-done setup
+      ## additional vscode settings
+      cp -r /workspace/lila-gitpod/.vscode/settings.json /workspace/lila/.vscode/settings.json
       ## Switch editor to lila workspace
       open --reuse-window /workspace/lila
   - name: search-setup
@@ -122,3 +124,4 @@ ports:
 vscode:
   extensions:
     - scala-lang.scala
+    - scalameta.metals
