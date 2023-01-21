@@ -34,7 +34,7 @@ tasks:
       ## Create config for lila
       cp /workspace/lila/conf/application.conf.default /workspace/lila/conf/application.conf
       tee -a /workspace/lila/conf/application.conf <<EOF
-      net.site.name = "lila-gitpod"
+      net.site.name = "openchessbase.org"
       net.domain = "$(gp url 8080 | cut -c9-)"
       net.socket.domains = [ "$(gp url 8080 | cut -c9-)" ]
       net.base_url = "$(gp url 8080)"
@@ -69,6 +69,7 @@ tasks:
   - name: search-setup
     command:
       ## my personal commands
+      gp sync-await setup
       echo "search.enabled = true" >> /workspace/lila/conf/application.conf
       git clone https://github.com/lichess-org/lila-search /workspace/lila-search
       cd /workspace/lila-search
