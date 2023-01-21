@@ -63,6 +63,7 @@ tasks:
       redis-server --daemonize yes
       gp sync-done setup
       ## additional vscode settings
+      mkdir -p /workspace/lila/.vscode/settings.json &&
       cp -r /workspace/lila-gitpod/.vscode/settings.json /workspace/lila/.vscode/settings.json
       ## Switch editor to lila workspace
       open --reuse-window /workspace/lila
