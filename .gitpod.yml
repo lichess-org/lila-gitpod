@@ -75,7 +75,7 @@ tasks:
       cd /workspace/lila-search
       rm -rf target
       sbt stage
-      target/universal/stage/bin/lila-search  
+      target/universal/stage/bin/lila-search
       sudo /etc/init.d/elasticsearch start &&
       curl -X GET 'http://localhost:9200'
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --es
