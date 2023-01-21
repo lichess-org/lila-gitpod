@@ -64,6 +64,18 @@ tasks:
       gp sync-done setup
       ## Switch editor to lila workspace
       open --reuse-window /workspace/lila
+  - name: search-setup
+    command:
+      ## my personal commands
+      echo "search.enabled = true" >> /workspace/lila/conf/application.conf
+      git clone https://github.com/lichess-org/lila-search /workspace/lila-search
+      cd /workspace/lila-search
+      rm -rf target
+      sbt stage
+      target/universal/stage/bin/lila-search  
+      sudo /etc/init.d/elasticsearch start &&
+      curl -X GET 'http://localhost:9200'
+      python3.9 /workspace/lila-db-seed/spamdb/spamdb.py --es
 
 ports:
   - port: 8080
