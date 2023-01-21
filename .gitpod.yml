@@ -26,7 +26,7 @@ tasks:
       gp open /workspace/lila-gitpod/gitpod/Welcome.md
       sudo service nginx restart
       cd /workspace
-      git clone https://github.com/lichess-org/lila.git
+      git clone https://github.com/ronfromhp/lila.git
       git clone https://github.com/lichess-org/lila-ws.git
       git clone https://github.com/lichess-org/lila-db-seed.git
       git clone https://github.com/lichess-org/fishnet.git --recursive
