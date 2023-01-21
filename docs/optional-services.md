@@ -148,11 +148,16 @@ pnpm link /workspace/chessground
    curl -X GET 'http://localhost:9200'
    ```
 
-3. Restart the lila process, (see [Recompiling lila](/development/#recompiling-lila)).
+3. Initialize the game index:
+   ```
+   curl -XPOST http://localhost:9673/mapping/game
+   ```
 
-4. Log in to your development site as the `lichess` user (with admin privileges). And visit the `echo $(gp url 8080)/dev/cli` URL.
+4. Restart the lila process, (see [Recompiling lila](/development/#recompiling-lila)).
 
-5. Run the following commands through the web interface:
+5. Log in to your development site as the `lichess` user (with admin privileges). And visit the `echo $(gp url 8080)/dev/cli` URL.
+
+6. Run the following commands through the web interface:
    ```
    forum search reset
    team search reset
