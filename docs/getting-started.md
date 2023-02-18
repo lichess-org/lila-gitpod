@@ -4,7 +4,7 @@ Click here to start a workspace:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/lichess-org/lila-gitpod)
 
-It will take about 8-10 minutes. You can watch the progress in the 3 terminal windows that automatically open.
+It will take about 8-10 minutes. You can watch the progress in the terminal windows that automatically open.
 
 ## Your Development Site
 

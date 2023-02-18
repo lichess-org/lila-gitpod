@@ -2,11 +2,12 @@
 
 > Your development environment is now building.
 
-You can watch the progress in the 3 terminal tabs that are running below:
+You can watch the progress in the terminal tabs that are running:
 
-1. `setup`: Sets up your configs, seeds your test database, and builds static assets
-2. `lila-ws`: Starts the websocket server
-3. `lila`: Starts the main Lichess server
+1. `ui`: Watches the static assets for changes and automatically rebuilds the scripts and stylesheets
+2. `lila`: Starts the main Lichess server
+3. `lila-ws`: Starts the websocket server
+4. `setup`: Sets up your configs, seeds your test database, and starts background services
 
 It will take about 8-10 minutes.
 
