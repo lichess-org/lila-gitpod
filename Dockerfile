@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20230308
+FROM ubuntu:focal-20230412
 
 SHELL ["/bin/bash", "-c"]
 
@@ -65,7 +65,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | b
 RUN curl -s "https://get.sdkman.io" | bash \
   && source "$HOME/.sdkman/bin/sdkman-init.sh" \
   && sdk version \
-  && sdk install java 17.0.6-tem \
+  && sdk install java 17.0.7-tem \
   && sdk install sbt
 
 # Install Rust and Cargo, needed for fishnet
