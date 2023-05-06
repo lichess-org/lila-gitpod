@@ -1,4 +1,4 @@
-image: ghcr.io/lichess-org/lila-gitpod:main
+image: ghcr.io/lichess-org/lila-gitpod
 
 tasks:
   - name: ui
