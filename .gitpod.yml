@@ -1,4 +1,4 @@
-image: ghcr.io/lichess-org/lila-gitpod:bump-deps
+image: ghcr.io/lichess-org/lila-gitpod:main
 
 tasks:
   - name: ui
