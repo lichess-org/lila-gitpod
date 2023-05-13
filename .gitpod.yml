@@ -12,6 +12,7 @@ tasks:
       gp sync-await setup
       cd /workspace/lila
       sbt bloopInstall
+      mkdir ~/.bloop && echo '{"javaOptions": [ "-Dfile.encoding=UTF-8" ]}' > ~/.bloop/bloop.json
       gp sync-done lila-sbt
       bloop compile lila
       bloop run lila -m lila.app.Lila

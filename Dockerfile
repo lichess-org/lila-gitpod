@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20221130
+FROM ubuntu:focal-20230412
 
 SHELL ["/bin/bash", "-c"]
 
@@ -11,7 +11,7 @@ RUN sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && sudo echo $TZ > /etc/
 RUN locale-gen "en_US.UTF-8"
 
 # Install coursier (dependency of bloop)
-RUN curl -fL https://github.com/coursier/launchers/raw/a827601d2f3d05a92df8f1d46cdd256afb1716b0/cs-x86_64-pc-linux.gz | gzip -d > cs \
+RUN curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs \
   && chmod +x cs \
   && sudo mv cs /usr/local/bin/cs \
   && cs setup --yes
@@ -28,9 +28,9 @@ RUN sudo apt-get update && sudo apt update \
   && sudo apt-get install -y elasticsearch git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
 
 # Install Golang (For Picfit + Mailhog)
-RUN wget https://go.dev/dl/go1.19.5.linux-amd64.tar.gz \
-  && sudo tar -C /usr/local -xzf go1.19.5.linux-amd64.tar.gz \
-  && rm go1.19.5.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz \
+  && sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz \
+  && rm go1.20.2.linux-amd64.tar.gz
 
 # Cleanup
 RUN sudo apt-get autoremove -y \
@@ -65,7 +65,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | b
 RUN curl -s "https://get.sdkman.io" | bash \
   && source "$HOME/.sdkman/bin/sdkman-init.sh" \
   && sdk version \
-  && sdk install java 17.0.5-tem \
+  && sdk install java 17.0.7-tem \
   && sdk install sbt
 
 # Install Rust and Cargo, needed for fishnet
