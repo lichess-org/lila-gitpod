@@ -11,6 +11,7 @@ tasks:
     command: |
       gp sync-await setup
       cd /workspace/lila
+      export COURSIER_CACHE=/workspace/coursier-cache
       sbt bloopInstall
       mkdir ~/.bloop && echo '{"javaOptions": [ "-Dfile.encoding=UTF-8" ]}' > ~/.bloop/bloop.json
       gp sync-done lila-sbt
@@ -20,6 +21,7 @@ tasks:
     command: |
       gp sync-await lila-sbt
       cd /workspace/lila-ws
+      export COURSIER_CACHE=/workspace/coursier-cache
       sbt compile
       sbt -Dconfig.file=/workspace/lila-ws-gitpod-application.conf run
   - name: setup
