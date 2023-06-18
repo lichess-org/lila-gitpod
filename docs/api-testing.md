@@ -6,13 +6,13 @@ Consider using a lila-gitpod workspace while you develop your API integration be
 
 ## Setup
 
-
 1. [Create your workspace](getting-started.md)
 2. [Make port 8080 public](sharing.md), so you can access it from the client.
 
 ## Bot Development
-3. Create an account for your bot
-4. Point your bot to use your workspace's development site instead of `lichess.org`
+
+1. Create an account for your bot
+2. Point your bot to use your workspace's development site instead of `lichess.org`
 
     !!! info "Using lichess-bot"
 
