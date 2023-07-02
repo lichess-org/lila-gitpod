@@ -63,6 +63,7 @@ tasks:
       sudo mongod --fork --dbpath /workspace/mongodb-data --logpath /var/log/mongod.log
       mongo lichess /workspace/lila/bin/mongodb/indexes.js
       python3.9 /workspace/lila-db-seed/spamdb/spamdb.py
+      mongosh lichess --quiet --file /workspace/lila-gitpod/scripts/mongodb/users.js
       redis-server --daemonize yes
       gp sync-done setup
       ## Switch editor to lila workspace
