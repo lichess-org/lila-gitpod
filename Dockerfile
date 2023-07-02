@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20230412
+FROM ubuntu:focal-20230605
 
 SHELL ["/bin/bash", "-c"]
 
@@ -20,17 +20,13 @@ RUN curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux
 RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 RUN echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 
-# Add elasticsearch apt source (for lila-search)
-RUN curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-
 RUN sudo apt-get update && sudo apt update \
-  && sudo apt-get install -y elasticsearch git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
+  && sudo apt-get install -y git-all mongodb-org nginx psmisc python3.9 python3-pip redis-server unzip vim zip
 
 # Install Golang (For Picfit + Mailhog)
-RUN wget https://go.dev/dl/go1.20.2.linux-amd64.tar.gz \
-  && sudo tar -C /usr/local -xzf go1.20.2.linux-amd64.tar.gz \
-  && rm go1.20.2.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz \
+  && sudo tar -C /usr/local -xzf go1.20.5.linux-amd64.tar.gz \
+  && rm go1.20.5.linux-amd64.tar.gz
 
 # Cleanup
 RUN sudo apt-get autoremove -y \
