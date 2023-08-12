@@ -4,8 +4,10 @@ tasks:
   - name: ui
     command: |
       gp sync-await setup
-      ## Compile js + css
       cd /workspace/lila
+      ## Install pre-commit/pre-push formatting hooks
+      pnpm husky install
+      ## Compile js + css
       ./ui/build -w
   - name: lila
     command: |
