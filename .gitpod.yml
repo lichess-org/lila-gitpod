@@ -5,8 +5,8 @@ tasks:
     command: |
       gp sync-await setup
       cd /workspace/lila
-      ## Install pre-commit/pre-push formatting hooks
-      pnpm husky install
+      ## Install pre-commit formatting hook
+      ln -s /workspace/lila/bin/git-hooks/pre-commit /workspace/lila/.git/hooks/pre-commit
       ## Compile js + css
       ./ui/build -w
   - name: lila
