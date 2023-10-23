@@ -61,7 +61,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | b
 RUN curl -s "https://get.sdkman.io" | bash \
   && source "$HOME/.sdkman/bin/sdkman-init.sh" \
   && sdk version \
-  && sdk install java 17.0.7-tem \
+  && sdk install java 21-tem \
   && sdk install sbt
 
 # Install Rust and Cargo, needed for fishnet
