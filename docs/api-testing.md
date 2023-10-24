@@ -11,8 +11,8 @@ Consider using a lila-gitpod workspace while you develop your API integration be
 
 ## Bot Development
 
-1. Create an account for your bot
-2. Point your bot to use your workspace's development site instead of `lichess.org`
+1.  Create an account for your bot
+2.  Point your bot to use your workspace's development site instead of `lichess.org`
 
     !!! info "Using lichess-bot"
 

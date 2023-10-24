@@ -9,10 +9,6 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 
 Read the full [Lichess on Gitpod documentation](https://lichess-org.github.io/lila-gitpod/).
 
-Click here to create a workspace: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/lichess-org/lila-gitpod)
+Click here to create a workspace: [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/new/#https://github.com/lichess-org/lila-docker)
 
 ![lila-on-gitpod](https://user-images.githubusercontent.com/271432/183785811-dc00e385-f13f-4226-9654-93b6465c75cb.png)
-
-## Credits
-
-Base Dockerfile modified from [benediktwerner/lichess-docker](https://github.com/benediktwerner/lichess-docker)

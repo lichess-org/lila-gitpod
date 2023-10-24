@@ -4,8 +4,9 @@
 
 Before submitting any pull requests, run the linters:
 
-    sbt scalafmtAll
-    pnpm run format
+```bash
+./lila-docker format
+```
 
 ## Submitting a Pull Request
 

@@ -8,30 +8,34 @@
 
 The main Lichess code repositories have automatically been added to your workspace. You can find them at:
 
-    ls /workspace
+    ls /workspace/lila-docker/repos
 
 To open them in your workspace:
 
-    open -r /workspace/lila      # open main lila repository
-    open -r /workspace/lila-ws   # open websocket repository
+    open -r repos/lila      # open main lila repository
+    open -r repos/lila-ws   # open websocket repository
 
 ## Recompiling lila
 
-When you edit a scala file, you'll have to restart `bloop`. Go to the `lila` terminal, type `Ctrl+c` to stop the running process, then rerun:
+When you edit a scala file, you'll have to restart lila. In a terminal, type:
 
-    bloop run lila -m lila.app.Lila
-
-Bloop will detect any changed files, recompile them, then start lila.
+```bash
+docker compose restart lila
+```
 
 ## Recompiling frontend assets
 
-If you're working on TypeScript or SCSS files, `./ui/build -w` will automatically detect the changes and recompile the assets. You can see the output in the `ui` terminal.
+If you're working on TypeScript or SCSS files, you can automatically detect the changes and recompile the assets. In a terminal, type:
+
+```bash
+docker compose run --rm ui bash -c "/lila/ui/build -w"
+```
 
 ## Updating Routes
 
-If you edit the `conf/routes` file, you'll need to update the route cache. Bloop will not automatically detect changes to this file.
+If you edit the `conf/routes` file, you'll need to update the route cache.
 
-Stop lila (see [Recompiling lila](#recompiling-lila) above), then run:
-
-    cd /workspace/lila
-    ./lila playRoutes
+```bash
+cd /workspace/lila
+./lila playRoutes
+```

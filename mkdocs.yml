@@ -9,8 +9,6 @@ nav:
   - Development:
       - Working with Lila: development.md
       - Lilaisms: lilaisms.md
-      - Extensions: extensions.md
-      - Optional Services: optional-services.md
       - Contributing: contributing.md
   - API Testing: api-testing.md
   - Sharing: sharing.md
@@ -21,13 +19,13 @@ theme:
   logo: https://lichess1.org/assets/logo/lichess-white.svg
   font: false
   palette:
-    - media: '(prefers-color-scheme: light)'
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: blue
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
-    - media: '(prefers-color-scheme: dark)'
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: blue
       toggle:
