@@ -8,12 +8,16 @@
 
 The main Lichess code repositories have automatically been added to your workspace. You can find them at:
 
-    ls /workspace/lila-docker/repos
+```bash
+ls /workspace/lila-docker/repos
+```
 
 To open them in your workspace:
 
-    open -r repos/lila      # open main lila repository
-    open -r repos/lila-ws   # open websocket repository
+```bash
+open -r repos/lila      # open main lila repository
+open -r repos/lila-ws   # open websocket repository
+```
 
 ## Recompiling lila
 
@@ -36,6 +40,5 @@ docker compose run --rm ui bash -c "/lila/ui/build -w"
 If you edit the `conf/routes` file, you'll need to update the route cache.
 
 ```bash
-cd /workspace/lila
-./lila playRoutes
+docker compose exec lila bash -c "./lila playRoutes"
 ```
