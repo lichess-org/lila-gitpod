@@ -20,7 +20,6 @@ Once lila is running, your dev site will be available. You can check the status 
 
 Your database is preloaded with a number of test accounts:
 
-    lichess  /  password   ROLE_SUPER_ADMIN
     admin    /  password   ROLE_ADMIN
     bobby    /  password
     mary     /  password
