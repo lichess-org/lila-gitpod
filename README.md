@@ -13,4 +13,6 @@ Click here to create a workspace:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/new/#https://github.com/lichess-org/lila-docker)
 
-![lila-on-gitpod](https://user-images.githubusercontent.com/271432/183785811-dc00e385-f13f-4226-9654-93b6465c75cb.png)
+![lila-gitpod screenshot](https://github.com/lichess-org/lila-gitpod/assets/271432/389e3bf1-ba26-45bb-9dfb-579630a8a9c4)
+
+See [lila-docker](https://github.com/lichess-org/lila-docker) repo for code and more information.

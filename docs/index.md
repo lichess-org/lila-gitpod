@@ -7,7 +7,7 @@ You can use [Gitpod](https://gitpod.io) (a free, online, VS Code-like IDE) for c
 - Seed your database with test data
 - Start a development site
 
-![lila-on-gitpod](https://user-images.githubusercontent.com/271432/183785811-dc00e385-f13f-4226-9654-93b6465c75cb.png)
+![lila-gitpod screenshot](https://github.com/lichess-org/lila-gitpod/assets/271432/389e3bf1-ba26-45bb-9dfb-579630a8a9c4)
 
 ## What do you need?
 
