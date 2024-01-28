@@ -27,8 +27,7 @@ Your database is preloaded with a number of test accounts:
 To see all other test accounts (admins, titled accounts, flagged accounts, bots, etc):
 
 ```bash
-docker compose run --rm -v $(pwd)/scripts:/scripts mongodb bash -c \
-    "mongosh --host mongodb lichess --file /scripts/mongodb/users.js"
+docker compose run --rm python python /scripts/users.py
 ```
 
 ## Stopping Your Workspace
