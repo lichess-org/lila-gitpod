@@ -24,7 +24,7 @@ open -r repos/lila-ws   # open websocket repository
 When you edit a scala file, you'll have to restart lila. In a terminal, type:
 
 ```bash
-docker compose restart lila
+./lila-docker lila restart
 ```
 
 ## Recompiling frontend assets
@@ -32,7 +32,7 @@ docker compose restart lila
 If you're working on TypeScript or SCSS files, you can automatically detect the changes and recompile the assets. In a terminal, type:
 
 ```bash
-docker compose run --rm ui bash -c "/lila/ui/build -w"
+./lila-docker ui
 ```
 
 ## Updating Routes
