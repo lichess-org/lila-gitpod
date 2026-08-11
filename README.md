@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> This repo is archived and Gitpod-based development environments are no longer supported.
+> 
+> Please see the README in https://github.com/lichess-org/lila for documentation and links to supported methods.
+
 ## Lichess.org Development Environment
 
 Watch [![youtube, video, player icon icon](https://github.com/lichess-org/lila-gitpod/assets/271432/06ae4b16-4717-49fe-adb2-6a3c4c08172c) a video demo](https://www.youtube.com/watch?v=imuo-d5vGS8)  of how you can use this.
